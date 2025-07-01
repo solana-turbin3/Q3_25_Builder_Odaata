@@ -17,7 +17,9 @@ const token_decimals = 1_000_000;
 
 // Recipient address
 // Shuva the builder :)
-const to = new PublicKey("8CMN1nBf2gnQSEaoAMngJCiHqZ8AvPPZpL6Eb7fvwqF3");
+// const to = new PublicKey("8CMN1nBf2gnQSEaoAMngJCiHqZ8AvPPZpL6Eb7fvwqF3");
+// mehan05 the builder :)
+const to = new PublicKey("Ed59fPEf2dBjfwKHEJJWZBoWvzi8ieGJ9Rm1xcf1beSC");
 
 (async () => {
     try {
