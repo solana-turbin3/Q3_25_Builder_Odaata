@@ -29,6 +29,7 @@ const mint = new PublicKey("AYhWHaye5rdFqiAtD7AuVXqQTQD5gH8qCxAYLetf42VB");
         /**
          * Your ata is: 9mR2upEXQPf9A2uiLNifHAwtQp52181r5AkREGayVvxZ
          * Your mint txid: 5nU3KL9oU1LiM356yQeH9pj2kNTMc7DgPR6oX4rK9kPPG1FxG6ttdvDKYeqiasXEAG1UdWGyfGY4upMEKetqj1Fe
+         * link: https://explorer.solana.com/tx/5nU3KL9oU1LiM356yQeH9pj2kNTMc7DgPR6oX4rK9kPPG1FxG6ttdvDKYeqiasXEAG1UdWGyfGY4upMEKetqj1Fe?cluster=devnet
          */
     } catch (error) {
         console.log(`Oops, something went wrong: ${error}`)
