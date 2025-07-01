@@ -2,11 +2,8 @@ import {Program, AnchorProvider, Wallet} from '@coral-xyz/anchor';
 import {
     Connection,
     Keypair,
-    LAMPORTS_PER_SOL,
     PublicKey,
-    sendAndConfirmTransaction,
     SystemProgram,
-    Transaction,
 } from "@solana/web3.js";
 
 import myWallet from '/home/mike/.config/solana/id.json';
