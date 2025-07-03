@@ -1,8 +1,11 @@
+import {readFileSync} from "fs";
+import path from 'path';
+
+import {createGenericFile, createSignerFromKeypair, signerIdentity} from "@metaplex-foundation/umi"
+import {createUmi} from "@metaplex-foundation/umi-bundle-defaults"
+import {irysUploader} from "@metaplex-foundation/umi-uploader-irys"
+
 import wallet from "../turbin3-wallet.json"
-import { createUmi } from "@metaplex-foundation/umi-bundle-defaults"
-import { createGenericFile, createSignerFromKeypair, signerIdentity } from "@metaplex-foundation/umi"
-import { irysUploader } from "@metaplex-foundation/umi-uploader-irys"
-import { readFile } from "fs/promises"
 
 // Create a devnet connection
 const umi = createUmi('https://api.devnet.solana.com');
@@ -13,18 +16,27 @@ const signer = createSignerFromKeypair(umi, keypair);
 umi.use(irysUploader());
 umi.use(signerIdentity(signer));
 
-(async () => {
+const giraffeIconPath = path.resolve(__dirname, '../../../../Giraffe_SPL_Token_icon.png');
+// https://gateway.irys.xyz/DgjeZa9EooEXHBGvDgzVP5vtoAydbDjB8s9hcsLdGmPH
+
+export async function uploadImage(imagePath: string) {
     try {
         //1. Load image
+        console.log(`Uploading image from: ${imagePath}`);
+        const image = readFileSync(imagePath);
+
         //2. Convert image to generic file.
+        const umiImage = createGenericFile(image, 'Giraffe.png', {
+            tags: [{name: 'Content-Type', value: 'image/png'}],
+        });
+
         //3. Upload image
+        const [myUri] = await umi.uploader.upload([umiImage])
 
-        // const image = ???
-
-        // const [myUri] = ??? 
-        // console.log("Your image URI: ", myUri);
-    }
-    catch(error) {
+        console.log("Your image URI: ", myUri);
+    } catch (error) {
         console.log("Oops.. Something went wrong", error);
     }
-})();
+}
+
+uploadImage(giraffeIconPath).then(() => process.exit(0));
