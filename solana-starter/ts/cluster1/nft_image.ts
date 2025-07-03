@@ -16,17 +16,21 @@ const signer = createSignerFromKeypair(umi, keypair);
 umi.use(irysUploader());
 umi.use(signerIdentity(signer));
 
-const giraffeIconPath = path.resolve(__dirname, '../../../../Giraffe_SPL_Token_icon.png');
+// const giraffeIconPath = path.resolve(__dirname, '../../../../Giraffe_SPL_Token_icon.png');
 // https://gateway.irys.xyz/DgjeZa9EooEXHBGvDgzVP5vtoAydbDjB8s9hcsLdGmPH
 
-export async function uploadImage(imagePath: string) {
+const nftRugFieldPath = path.resolve(__dirname, './lib/NFT_Image_Rug_Field.png');
+const nftRugFieldName = 'RugMan.png';
+// Your image URI:  https://gateway.irys.xyz/HR7jBHKBEjnmkBtg7RTXzeZRHTEy3LnUVjh5BoVFDRse
+
+export async function uploadImage(imagePath: string, irysFileName: string) {
     try {
         //1. Load image
         console.log(`Uploading image from: ${imagePath}`);
         const image = readFileSync(imagePath);
 
         //2. Convert image to generic file.
-        const umiImage = createGenericFile(image, 'Giraffe.png', {
+        const umiImage = createGenericFile(image, irysFileName, {
             tags: [{name: 'Content-Type', value: 'image/png'}],
         });
 
@@ -39,4 +43,4 @@ export async function uploadImage(imagePath: string) {
     }
 }
 
-uploadImage(giraffeIconPath).then(() => process.exit(0));
+uploadImage(nftRugFieldPath, nftRugFieldName).then(() => process.exit(0));
