@@ -1,3 +1,9 @@
 [submodule "solana-starter"]
 	path = solana-starter
 	url = https://github.com/odaata/solana-starter.git
+[submodule "vault"]
+	path = vault
+	url = git@github.com:odaata/vault.git
+[submodule "escrow"]
+	path = escrow
+	url = git@github.com:odaata/escrow.git
