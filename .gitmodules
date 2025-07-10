@@ -7,3 +7,6 @@
 [submodule "solana-starter"]
 	path = solana-starter
 	url = git@github.com:odaata/solana-starter.git
+[submodule "amm"]
+	path = amm
+	url = git@github.com:odaata/amm.git
