@@ -13,3 +13,12 @@
 [submodule "nft-staking"]
 	path = nft-staking
 	url = git@github.com:odaata/nft-staking.git
+[submodule "marketplace"]
+	path = marketplace
+	url = git@github.com:odaata/marketplace.git
+[submodule "satoshi-dice"]
+	path = satoshi-dice
+	url = git@github.com:odaata/satoshi-dice.git
+[submodule "magic-block-counter"]
+	path = magic-block-counter
+	url = git@github.com:odaata/magic-block-counter.git
