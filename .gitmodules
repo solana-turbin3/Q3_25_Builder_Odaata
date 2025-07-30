@@ -22,3 +22,6 @@
 [submodule "magic-block-counter"]
 	path = magic-block-counter
 	url = git@github.com:odaata/magic-block-counter.git
+[submodule "capstone"]
+	path = capstone
+	url = git@github.com:odaata/capstone.git
